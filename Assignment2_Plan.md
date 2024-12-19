@@ -6,26 +6,26 @@
 
 Modify the `RespondToCommand()` method to handle the new keywords “up” and “down.” The updated method would look like this:
 
-    ```cpp
-    void RespondToCommand(tflite::ErrorReporter * error_reporter,
-                            int32_t current_time, const char* found_command,
-                            uint8_t score, bool is_new_command) {
-        if (is_new_command) {
-        if (strcmp(found_command, "up") == 0) {
-            digitalWrite(RED_LED_PIN, HIGH);
-            digitalWrite(BLUE_LED_PIN, LOW);
-            Serial.println("up");
-        } else if (strcmp(found_command, "down") == 0) {
-            digitalWrite(RED_LED_PIN, LOW);
-            digitalWrite(BLUE_LED_PIN, HIGH);
-            Serial.println("down");
-        } else {
-            digitalWrite(RED_LED_PIN, LOW);
-            digitalWrite(BLUE_LED_PIN, LOW);
-        }
-        }
+```cpp
+void RespondToCommand(tflite::ErrorReporter * error_reporter,
+                        int32_t current_time, const char* found_command,
+                        uint8_t score, bool is_new_command) {
+    if (is_new_command) {
+    if (strcmp(found_command, "up") == 0) {
+        digitalWrite(RED_LED_PIN, HIGH);
+        digitalWrite(BLUE_LED_PIN, LOW);
+        Serial.println("up");
+    } else if (strcmp(found_command, "down") == 0) {
+        digitalWrite(RED_LED_PIN, LOW);
+        digitalWrite(BLUE_LED_PIN, HIGH);
+        Serial.println("down");
+    } else {
+        digitalWrite(RED_LED_PIN, LOW);
+        digitalWrite(BLUE_LED_PIN, LOW);
     }
-    ```
+    }
+}
+```
 
 ### Step 2: Configure LED Pins
 
